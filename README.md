@@ -38,3 +38,7 @@ out hook:
 
     ln -sf /var/www/maintenance_page/deploy/hooks/post-receive hooks/post-receive
     chmod +x hooks/post-receive
+    
+## SSL Certificates
+
+The nginx config expects an SSL certificate - this should be restored from a backup.
