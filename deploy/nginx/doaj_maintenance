@@ -19,7 +19,7 @@ server {
     root /var/www/maintenance_page/;
 
     location / {
-        try_files $uri $uri/ /src/$uri /src/$uri/ =404;
+        try_files $uri $uri/ /html/$uri /html/$uri/ =404;
     }
 
     access_log /var/log/nginx/maintenance_page.access.log;
