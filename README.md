@@ -20,9 +20,13 @@ restart ```nginx``` for you.
 You need a bare git repo on the host, called ```maintenance_page.git```. This is created
 with ```git init --bare maintenance_page.git``` in the home directory.
 
-Create the working tree directory where nginx will serve the files from:
+Create the working tree directory where nginx will serve the files from and fix the
+permissions:
 
     sudo mkdir /var/www/maintenance_page
+    sudo chown www-data:www-data /var/www/maintenance_page
+    sudo chmod -R 775 /var/www
+    sudo usermod -a -G www-data cloo
 
 The post receive hook then needs to be created on the host, by copying
 ```deploy/hooks/post-receive``` to ```~/maintenance_page.git/hooks/post-receive``` and
