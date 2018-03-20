@@ -13,7 +13,7 @@ server {
     error_page 503 /maintenance_page/html/maintenance.html;
 
     location = /maintenance_page/html/maintenance.html {
-        root = /var/www/maintenance_page/;
+        root /var/www/maintenance_page/;
     }
 
     access_log /var/log/nginx/maintenance_page.access.log;
