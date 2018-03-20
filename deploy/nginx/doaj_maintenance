@@ -17,7 +17,7 @@ server {
     #}
 
     root /var/www/maintenance_page/;
-    index html/maintenance.html
+    index html/maintenance.html;
 
     location / {
         try_files $uri $uri/ /html/$uri /html/$uri/ =404;
