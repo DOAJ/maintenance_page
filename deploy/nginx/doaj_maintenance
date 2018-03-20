@@ -10,7 +10,7 @@ server {
         return 503;
     }
 
-    root /var/www/maintenance_page/
+    root /var/www/maintenance_page/;
 
     error_page 503 /html/maintenance.html;
 
