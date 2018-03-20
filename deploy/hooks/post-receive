@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+while read oldrev newrev ref
+do
+    if [[ $ref =~ .*/master$ ]];
+    then
+        echo "Master ref received.  Deploying master branch to production..."
+        git --work-tree=/var/www/maintenance_page --git-dir=/home/cloo/maintenance_page.git checkout -f
+        sudo ln -sf /var/www/maintenance_page/deploy/nginx/doaj_maintenance /etc/nginx/sites-available/doaj_maintenance
+        sudo ln -sf /etc/nginx/sites-available/doaj_maintenance /etc/nginx/sites-enabled/doaj_maintenance
+        sudo nginx -t && sudo nginx -s reload
+    else
+        echo "Ref $ref successfully received. Doing nothing: only the master branch may be deployed on this server."
+    fi
+done
