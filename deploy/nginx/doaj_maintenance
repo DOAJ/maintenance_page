@@ -10,11 +10,9 @@ server {
         return 503;
     }
 
-    error_page 503 /maintenance_page/html/maintenance.html;
+    root /var/www/maintenance_page/
 
-    location /maintenance_page/ {
-        root /var/www/maintenance_page/;
-    }
+    error_page 503 /html/maintenance.html;
 
     access_log /var/log/nginx/maintenance_page.access.log;
     error_log /var/log/nginx/maintenance_page.error.log;
