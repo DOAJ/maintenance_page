@@ -6,7 +6,7 @@ A page to show when the main DOAJ site is down.
 This is managed using git hooks. You'll need the server in your ```.ssh/config``` file,
 and the remote:
 
-    git remote add origin cloo@doaj-maintenance-page-webhost:maintenance_page.git
+    git remote add production cloo@doaj-maintenance-page-webhost:maintenance_page.git
 
 You can only deploy the master branch. To do so, run the following command:
 
@@ -33,8 +33,8 @@ The post receive hook then needs to be created on the host, by copying
 ```chmod +x hooks/post-receive``` on the host. This will allow the script to run on
 deploy and copy the code to the correct work tree.
 
-Afterwards, you can remove the coped hook and replace it with a symlink the the checked
-out hook:
+Afterwards, you can remove the copied hook and replace it with a symlink to the checked
+out hook (so you can update the hooks):
 
     ln -sf /var/www/maintenance_page/deploy/hooks/post-receive hooks/post-receive
     chmod +x hooks/post-receive
