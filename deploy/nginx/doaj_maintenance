@@ -6,21 +6,31 @@ server {
 
     server_name doaj.org;
 
-    #location / {
-    #    return 503;
-    #}
+    root /var/www/maintenance_page/html;
 
-    #error_page 503 /maintenance_page/html/maintenance.html;
+    error_page 503 /maintenance.html;
 
-    #location /maintenance_page/ {
-    #    root /var/www/maintenance_page/;
-    #}
-
-    root /var/www/maintenance_page/;
-    index html/maintenance.html;
+    # Block .git and other hidden files (except .well-known for SSL)
+    location ~ /\.(?!well-known).* {
+        deny all;
+        access_log off;
+        log_not_found off;
+    }
 
     location / {
-        try_files $uri $uri/ /html/$uri /html/$uri/ =404;
+        try_files $uri =503;
+    }
+
+    location /css/bootstrap.css {
+        alias /var/www/maintenance_page/css/bootstrap.css;
+    }
+
+    location /css/doaj.css {
+        alias /var/www/maintenance_page/css/doaj.css;
+    }
+
+    location /img/doaj.jpg {
+        alias /var/www/maintenance_page/img/doaj.jpg;
     }
 
     access_log /var/log/nginx/maintenance_page.access.log;
