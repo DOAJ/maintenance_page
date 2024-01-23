@@ -1,4 +1,54 @@
-.center-container {
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 0.015em;
+    background-color: #f6f4f4;
+    color: #282624;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
     text-align: center;
-    padding-top: 5rem;
+    padding-top: 6rem;
+}
+
+h1 {
+    font-family: 'Spectral', serif;
+    letter-spacing: -0.03em;
+    margin: 1.5rem 0;
+    text-align: center;
+    font-size: 1.802em;
+    font-weight: 700;
+    line-height: 1.05;
+}
+
+p {
+    margin: 0 0 1.5rem 0;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+a {
+    text-decoration: underline;
+    color: #282624;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: #FD5A3B;
+    text-decoration: none;
+}
+
+#logo {
+    width: 200px;
+    margin-bottom: 1.5rem;
+}
+
+#xLogo {
+    width: 18px;
+    margin-right: .25rem;
 }
