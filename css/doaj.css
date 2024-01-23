@@ -52,3 +52,9 @@ a:active {
     width: 18px;
     margin-right: .25rem;
 }
+
+a:hover > #xLogo,
+a:focus > #xLogo,
+a:active > #xLogo {
+    filter: invert(44%) sepia(97%) saturate(2383%) hue-rotate(338deg) brightness(102%) contrast(98%);
+}
