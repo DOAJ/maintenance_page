@@ -42,3 +42,11 @@ out hook (so you can update the hooks):
 ## SSL Certificates
 
 The nginx config expects an SSL certificate - this should be restored from a backup.
+
+## Using Git on the machine
+
+Because we have a different work tree set, we need to supply these to any git command, e.g.:
+
+    git --work-tree=/var/www/maintenance_page --git-dir=/home/cloo/maintenance_page.git status
+or
+    git --work-tree=/var/www/maintenance_page --git-dir=/home/cloo/maintenance_page.git reset --hard
