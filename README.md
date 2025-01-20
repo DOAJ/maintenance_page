@@ -1,7 +1,7 @@
 # maintenance_page
 A page to show when the main DOAJ site is down.
 
-**NEW:** This can now be deployed via ansible in the sysadmin repo.
+**NEW:** This can now be deployed via ansible in the [sysadmin repo](https://github.com/cottageLabs/sysadmin).
 
 ## Deployment
 
