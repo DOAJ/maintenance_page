@@ -6,7 +6,7 @@ server {
 
     server_name doaj.org;
 
-    root /var/www/maintenance_page/html;
+    root /var/www/maintenance_page;
 
     error_page 503 /maintenance.html;
 
@@ -18,23 +18,11 @@ server {
     }
 
     location / {
-        try_files $uri =503;
+        try_files /html$uri $uri =503;
     }
 
-    location /css/bootstrap.css {
-        alias /var/www/maintenance_page/css/bootstrap.css;
-    }
-
-    location /css/doaj.css {
-        alias /var/www/maintenance_page/css/doaj.css;
-    }
-
-    location /img/doaj.jpg {
-        alias /var/www/maintenance_page/img/doaj.jpg;
-    }
-
-    access_log /var/log/nginx/maintenance_page.access.log;
-    error_log /var/log/nginx/maintenance_page.error.log;
+    access_log /var/log/nginx/doaj.maintenance_page.access.log;
+    error_log /var/log/nginx/doaj.maintenance_page.error.log;
 
     ssl_certificate /etc/letsencrypt/live/doaj.org/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/doaj.org/privkey.pem;
