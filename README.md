@@ -1,6 +1,8 @@
 # maintenance_page
 A page to show when the main DOAJ site is down.
 
+NEW: This can now be deployed via ansible in the sysadmin repo.
+
 ## Deployment
 
 This is managed using git hooks. You'll need the server in your ```.ssh/config``` file,
